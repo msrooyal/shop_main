@@ -1,0 +1,71 @@
+# Ignore environment files
+myenv/
+venv/
+env/
+.env/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py.class
+
+# Ignore Django static and media files
+staticfiles/
+media/
+
+# Ignore database files (SQLite, PostgreSQL, etc.)
+*.sqlite3
+*.db
+*.sql
+*.dump
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore pipenv and poetry files
+Pipfile
+Pipfile.lock
+poetry.lock
+pyproject.toml
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+
+# Ignore testing and pytest files
+.pytest_cache/
+test-results/
+
+# Ignore npm and node files (if using frontend tools)
+node_modules/
+npm-debug.log*
+
+# Ignore compiled CSS and JS files (if using frontend tools)
+*.css
+*.js
+*.map
+
+# Ignore secrets and sensitive data
+secrets.json
+*.key
+*.pem
+*.cert
+*.env
+.env.local
+.env.development
+.env.production
