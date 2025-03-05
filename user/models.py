@@ -16,22 +16,14 @@ class User(models.Model):
     def __str__(self):
         return self.email
 
-    def generate_verification_code(self):
-        # تولید یک کد تصادفی ۶ رقمی
-        self.verification_code = str(uuid.uuid4().int)[:6]
-        # تنظیم زمان انقضا (مثلاً ۱۰ دقیقه بعد)
-        self.verification_code_expires = timezone.now() + timedelta(minutes=2)
-        self.save()
 
-    def is_verification_code_valid(self, code):
-        # بررسی معتبر بودن کد و زمان انقضا
-        if self.verification_code == code and timezone.now() < self.verification_code_expires:
-            return True
-        return False
 
 class ForgetPassword(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=18, unique=True)
     code = models.CharField(max_length=50, unique=True)
+    time_create = models.DateTimeField(auto_now=True)  # زمان ایجاد کد
+
     def __str__(self):
         return self.email
+
